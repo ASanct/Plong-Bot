@@ -26,7 +26,7 @@ class commands:
 	@commands.command(aliases = ["favorite"], pass_context = True)
 	async def favorites(self, ctx):
 		""" !favorites to see or manage a live list of multiple items and their marketprice. """
-		server_id = "392806051507994624"
+		server_id = "700440840438284288"
 		server = self.bot.get_server(server_id)
 		options = []
 		for emoji in server.emojis:
@@ -43,7 +43,7 @@ class commands:
 		responses = ["What item would you like to add to your favorites?", "What items would you like to remove from your favorites? Enter the numbers or names separated by commas.", "Are you sure you want to clear all favorites? (y/n)"]
 		timeout = 60
 		embed = discord.Embed(color = 0x72eab0)
-		server_id = "392806051507994624"
+		server_id = "700440840438284288"
 
 		try:
 			if tasks.favorites_dict[ctx.message.author.id]:
@@ -414,11 +414,11 @@ class commands:
 			server = self.bot.get_server(server_id)
 			username = username.replace(" ", "+")
 			if ctx.message.server == server:
-				await self.bot.say("🔗 http://na-bns.ncsoft.com/ingame/bs/character/profile?c=" + username)
-				await self.bot.say("🔗 http://na-bns.ncsoft.com/ingame/bs/character/profile?c=ginxo")
+				await self.bot.say("🔗 http://eu-bns.ncsoft.com/ingame/bs/character/profile?c=" + username)
+				await self.bot.say("🔗 http://eu-bns.ncsoft.com/ingame/bs/character/profile?c=ginxo")
 				await self.bot.send_file(ctx.message.channel, "ginxo.png")
 			else:
-				await self.bot.say("🔗 http://na-bns.ncsoft.com/ingame/bs/character/profile?c=" + username)
+				await self.bot.say("🔗 http://eu-bns.ncsoft.com/ingame/bs/character/profile?c=" + username)
 		else:
 			await self.bot.say("Maybe try entering an actual username.")
 
@@ -458,7 +458,7 @@ class commands:
 
 	async def send_request(self, item_name):
 		item_name_url = item_name.strip().replace(" ", "+")
-		URL = "http://na-bnsmarket.ncsoft.com/bns/bidder/search.web?ct=&exact=1&grade=&level=&prevq=&q=" + item_name_url + "&sort=&stepper=&type="
+		URL = "http://eu-bnsmarket.ncsoft.com/bns/bidder/search.web?ct=&exact=1&grade=&level=&prevq=&q=" + item_name_url + "&sort=&stepper=&type="
 
 		try:
 			async with aiohttp.ClientSession(cookies=tasks.cookie) as session:

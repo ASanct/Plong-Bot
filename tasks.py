@@ -100,7 +100,7 @@ class tasks:
 
 	async def scheduled_price_alerts(self):
 		refresh_interval = 60 #Checks every minute
-		URL = "http://na-bnsmarket.ncsoft.com/bns/bidder/home.web?npc=false"
+		URL = "http://eu-bnsmarket.ncsoft.com/bns/bidder/home.web?npc=false"
 
 		while True:
 			if alert_dict: #Check if dict has any entries for price alerts to do.
@@ -508,7 +508,7 @@ class tasks:
 		schlong = discord.utils.get(server.members, id = '217513859412525057')
 		numbering = ["<:1_:403077593513066496>", "<:2_:403077593273991170>", "<:3_:403077593198362627>"]
 
-		URL = "http://na-bnsmarket.ncsoft.com/bns/bidder/home.web?npc=false"
+		URL = "http://eu-bnsmarket.ncsoft.com/bns/bidder/home.web?npc=false"
 
 		while True:
 			# sending get request and saving the response as response object
@@ -577,7 +577,7 @@ class tasks:
 			await asyncio.sleep(refresh_interval)
 
 	async def add_favorite(self, item_num):
-		URL = "http://na-bnsmarket.ncsoft.com/bns/favorite/insert.web"
+		URL = "http://eu-bnsmarket.ncsoft.com/bns/favorite/insert.web"
 		payload = {'item':item_num}
 		data = ""
 
@@ -601,7 +601,7 @@ class tasks:
 			return False
 
 	async def delete_favorite(self, item_num):
-		URL = "http://na-bnsmarket.ncsoft.com/bns/favorite/delete.web"
+		URL = "http://eu-bnsmarket.ncsoft.com/bns/favorite/delete.web"
 		payload = {'item':item_num}
 		data = ""
 
